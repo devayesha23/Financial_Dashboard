@@ -7,7 +7,6 @@
         /* Default theme */
         body {
             background-color: #f9f9f9;
-            
         }
 
         .btn-primary {
@@ -17,18 +16,18 @@
 
         /* Dark theme */
         body.dark {
-                background-color: #333;
-                color: #fff;
-            }
+            background-color: #333;
+            color: #fff;
+        }
 
-            body.dark * {
-                color: #fff; /* Set text color to white for all elements */
-            }
+        body.dark * {
+            color: #fff; /* Set text color to white for all elements */
+        }
 
-            body.dark .btn-primary {
-                background-color: #555;
-                border-color: #555;
-            }
+        body.dark .btn-primary {
+            background-color: #555;
+            border-color: #555;
+        }
 
         /* Light theme */
         body.light {
@@ -149,14 +148,14 @@
                         <input type="date" class="form-control" id="end-date">
                     </div>
                     <div class="form-group">
-                        <label for="currencies">Currencies</label>
-                        <select multiple class="form-control" id="currencies">
+                        <label for="historical-base-currency">Base Currency</label>
+                        <select class="form-control" id="historical-base-currency">
                             <!-- Options will be populated dynamically -->
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="base-currency-historical">Base Currency</label>
-                        <select class="form-control" id="base-currency-historical">
+                        <label for="target-currencies">Target Currencies</label>
+                        <select multiple class="form-control" id="target-currencies">
                             <!-- Options will be populated dynamically -->
                         </select>
                     </div>
@@ -193,121 +192,6 @@
             <h3>Adding New Currency Pairs</h3>
             <p>To add new currency pairs, select the base currency from the dropdown list, and the real-time rates for the selected base currency will be displayed in the table.</p>
             <h3>Interpreting the Data</h3>
-            <p>The table shows the currency code and the corresponding exchange rate. Use the currency converter to convert between currencies, and use the historical rates form to888;
-            width: 80%;
-            color: whitesmoke;
-        }
-
-        #tutorial-section .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        #tutorial-section .close:hover,
-        #tutorial-section .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center">Fixer Currency Dashboard</h1>
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <h3>Real-Time Rates</h3>
-                <div class="form-group">
-                    <label for="base-currency">Base Currency</label>
-                    <select class="form-control" id="base-currency">
-                        <!-- Options will be populated dynamically -->
-                    </select>
-                </div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Currency</th>
-                            <th>Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody id="realtime-rates"></tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-                <h3>Currency Converter</h3>
-                <form id="converter-form">
-                    <div class="form-group">
-                        <label for="from-currency">From Currency</label>
-                        <input type="text" class="form-control" id="from-currency" placeholder="Enter currency code">
-                    </div>
-                    <div class="form-group">
-                        <label for="to-currency">To Currency</label>
-                        <input type="text" class="form-control" id="to-currency" placeholder="Enter currency code">
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Amount</label>
-                        <input type="text" class="form-control" id="amount" placeholder="Enter amount">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Convert</button>
-                </form>
-                <div id="conversion-result" class="conversion-result"></div>
-                <h3>Historical Rates</h3>
-                <form id="historical-form">
-                    <div class="form-group">
-                        <label for="start-date">Start Date</label>
-                        <input type="date" class="form-control" id="start-date">
-                    </div>
-                    <div class="form-group">
-                        <label for="end-date">End Date</label>
-                        <input type="date" class="form-control" id="end-date">
-                    </div>
-                    <div class="form-group">
-                        <label for="currencies">Currencies</label>
-                        <select multiple class="form-control" id="currencies">
-                            <!-- Options will be populated dynamically -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="base-currency-historical">Base Currency</label>
-                        <select class="form-control" id="base-currency-historical">
-                            <!-- Options will be populated dynamically -->
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Plot Chart</button>
-                </form>
-                <div class="form-group">
-                    <label for="chart-display">Select Chart Display:</label>
-                    <select class="form-control" id="chart-display">
-                        <option value="line">Line Chart</option>
-                        <option value="bar">Bar Chart</option>
-                        <option value="radar">Radar Chart</option>
-                    </select>
-                </div>
-                <div id="chart-container" class="chart-container">
-                    <canvas id="historical-chart"></canvas>
-                </div>
-                <div class="form-group">
-                    <label for="theme-select">Select Theme:</label>
-                    <select class="form-control" id="theme-select">
-                        <option value="default">Default</option>
-                        <option value="dark">Dark</option>
-                        <option value="light">Light</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="tutorial-section" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Welcome to the Fixer Currency Dashboard!</h2>
-            <p>This dashboard lets you check real time rates for selected currencies, convert currencies, and plot historical currency rates.</p>
-            <h3>Adding New Currency Pairs</h3>
-            <p>To add new currency pairs, select the base currency from the dropdown list, and the real-time rates for the selected base currency will be displayed in the table.</p>
-            <h3>Interpreting the Data</h3>
             <p>The table shows the currency code and the corresponding exchange rate. Use the currency converter to convert between currencies, and use the historical rates form to plot historical exchange rates.</p>
             <h3>Changing the Theme</h3>
             <p>To change the theme, you get light mode and dark mode options. Choose your preferred theme just under the historical plots</p>        </div>
@@ -318,21 +202,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             const API_KEY = '43ca5faebc7d179a5d05fc6969b3f340';
 
-            // Fetch supported symbols
-            fetch(`https://data.fixer.io/api/symbols?access_key=${API_KEY}`)
-                .then(response => response.json())
-                .then(data => {
-                    const symbols = data.symbols;
-                    const baseCurrencySelect = document.getElementById('base-currency');
-                    const currenciesSelect = document.getElementById('currencies');
-                    const baseCurrencySelectHistorical = document.getElementById('base-currency-historical');
-                    for (const symbol in symbols) {
-                        const option = `<option value="${symbol}">${symbol} - ${symbols[symbol]}</option>`;
-                        baseCurrencySelect.insertAdjacentHTML('beforeend', option);
-                        baseCurrencySelectHistorical.insertAdjacentHTML('beforeend', option);
-                        currenciesSelect.insertAdjacentHTML('beforeend', option);
-                    }
-                });
+            // Function to fetch and populate base currency and target currencies
+            function populateCurrencies() {
+                fetch(`https://data.fixer.io/api/symbols?access_key=${API_KEY}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const symbols = data.symbols;
+                        const baseCurrencySelect = document.getElementById('base-currency');
+                        const historicalBaseCurrencySelect = document.getElementById('historical-base-currency');
+                        const targetCurrenciesSelect = document.getElementById('target-currencies');
+
+                        baseCurrencySelect.innerHTML = '';
+                        historicalBaseCurrencySelect.innerHTML = '';
+                        targetCurrenciesSelect.innerHTML = '';
+
+                        for (const symbol in symbols) {
+                            const option = `<option value="${symbol}">${symbol} - ${symbols[symbol]}</option>`;
+                            baseCurrencySelect.insertAdjacentHTML('beforeend', option);
+                            historicalBaseCurrencySelect.insertAdjacentHTML('beforeend', option);
+                            targetCurrenciesSelect.insertAdjacentHTML('beforeend', option);
+                        }
+                    });
+            }
+
+            populateCurrencies();
 
             // Fetch real-time rates based on selected base currency
             const baseCurrencySelect = document.getElementById('base-currency');
@@ -352,15 +245,31 @@
                     });
             });
 
-            // Fetch historical rates based on selected base currency
-            const baseCurrencySelectHistorical = document.getElementById('base-currency-historical');
+            // Convert currency
+            const converterForm = document.getElementById('converter-form');
+            converterForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const fromCurrency = document.getElementById('from-currency').value;
+                const toCurrency = document.getElementById('to-currency').value;
+                const amount = document.getElementById('amount').value;
+
+                fetch(`https://data.fixer.io/api/convert?access_key=${API_KEY}&from=${fromCurrency}&to=${toCurrency}&amount=${amount}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const result = data.result;
+                        const conversionResultElement = document.getElementById('conversion-result');
+                        conversionResultElement.innerHTML = `<div class="conversion-result"><p>${amount} ${fromCurrency} is equal to ${result} ${toCurrency}</p></div>`;
+                    });
+            });
+
+            // Plot historical rates chart
             const historicalForm = document.getElementById('historical-form');
             historicalForm.addEventListener('submit', function(event) {
                 event.preventDefault();
-                const baseCurrency = baseCurrencySelectHistorical.value;
                 const startDate = document.getElementById('start-date').value;
                 const endDate = document.getElementById('end-date').value;
-                const selectedCurrencies = Array.from(document.getElementById('currencies').selectedOptions).map(option => option.value);
+                const baseCurrency = document.getElementById('historical-base-currency').value;
+                const selectedTargetCurrencies = Array.from(document.getElementById('target-currencies').selectedOptions).map(option => option.value);
 
                 fetch(`https://data.fixer.io/api/timeseries?access_key=${API_KEY}&start_date=${startDate}&end_date=${endDate}&base=${baseCurrency}`)
                     .then(response => response.json())
@@ -371,7 +280,7 @@
                         }
                         const rates = data.rates;
                         const labels = Object.keys(rates);
-                        const datasets = selectedCurrencies.map(currency => {
+                        const datasets = selectedTargetCurrencies.map(currency => {
                             const dataPoints = labels.map(label => rates[label][currency]);
                             return {
                                 label: currency,
@@ -401,7 +310,14 @@
                             }
                         }
 
+                        const chartDisplaySelect = document.getElementById('chart-display');
+                        chartDisplaySelect.addEventListener('change', function() {
+                            const chartType = this.value;
+                            updateChartDisplay(chartType);
+                        });
+
                         updateChartDisplay('line');
+
                     })
                     .catch(error => {
                         console.error('Error fetching historical rates:', error);
